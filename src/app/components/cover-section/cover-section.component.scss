@@ -1,0 +1,51 @@
+@import 'variables';
+@import 'functions';
+
+$coverSectionMinHeight: 640px;
+$coverSectionHeight: 100vh;
+
+:host {
+  position: relative;
+
+  display: block;
+  min-height: $coverSectionMinHeight;
+  height: $coverSectionHeight;
+}
+
+  .__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+
+  .__wrap {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .__content {
+    position: relative;
+    z-index: zIndex('over-bg-line');
+
+    margin-left: $bu * 4;
+  }
+
+    .__description {
+      margin-top: $bu / 2;
+
+      font-size: 20px;
+      line-height: 34px;
+    }
+
+    .__cta {
+      margin-top: $bu * 1.5;
+    }

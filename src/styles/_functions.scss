@@ -1,0 +1,25 @@
+@import 'variables';
+
+@function zIndex($layer) {
+  @if not map-has-key($zIndexes, $layer) {
+    @warn "No layer found for `#{$layer}` in $zIndexes map.";
+  }
+
+  @return map-get($zIndexes, $layer);
+}
+
+@function background($key) {
+  @if not map-has-key($backgrounds, $key) {
+    @warn "No key found for `#{$key}` in $backgrounds map.";
+  }
+
+  @return map-get($backgrounds, $key);
+}
+
+@function color($key) {
+  @if not map-has-key($colors, $key) {
+    @warn "No key found for `#{$key}` in $colors map.";
+  }
+
+  @return map-get($colors, $key);
+}

@@ -1,0 +1,40 @@
+h1, h2, h3, h4, .t-h1, .t-h2, .t-h3, .t-h4 {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 600;
+  color: map-get($colors, 'important');
+}
+
+h1, .t-h1 {
+  font-size: 60px;
+  line-height: 70px;
+  letter-spacing: 1.5px;
+}
+
+h2, .t-h2 {
+  font-size: 44px;
+  line-height: 60px;
+}
+
+h3, .t-h3 {
+  font-size: 26px;
+  line-height: 34px;
+}
+
+h4, .t-h4 {
+  font-size: 20px;
+  line-height: 34px;
+}
+
+p, .t-p {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+a {
+  text-decoration: none;
+}

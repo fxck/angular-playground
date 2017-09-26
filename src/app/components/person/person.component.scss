@@ -1,0 +1,43 @@
+@import 'variables';
+
+$personContentMaxWidth: 410px;
+
+:host {
+  display: block;
+
+  &.is-inverted {
+    direction: rtl;
+  }
+}
+
+  .__col {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+  }
+
+  .__background {
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+
+    &:before {
+      content: '';
+
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  .__content {
+    max-width: $personContentMaxWidth + ($bu * 2);
+    margin: 0 auto;
+    padding: $bu;
+    padding-top: $bu * 5;
+
+    direction: ltr;
+  }
+
+    .__description {
+      margin-top: $bu;
+    }

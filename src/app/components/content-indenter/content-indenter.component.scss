@@ -1,0 +1,18 @@
+@import 'theme';
+@import 'functions';
+
+:host {
+  position: relative;
+
+  display: block;
+}
+
+  .__indenter {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    background: color('primary');
+  }

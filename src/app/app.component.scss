@@ -1,0 +1,44 @@
+@import 'theme';
+@import 'functions';
+
+:host {
+  position: relative;
+
+  display: block;
+}
+
+  .__app-bar {
+    position: relative;
+    z-index: zIndex('app-bar');
+  }
+
+  .__intro {
+    position: relative;
+    z-index: zIndex('over-bg-line');
+
+    max-width: 790px;
+    margin-left: 25%;
+    padding: ($bu * 10) 0;
+  }
+
+    .__intro_indenter {
+      margin-left: -46px;
+    }
+
+    .__intro_text {
+      color: color('important');
+
+      font-size: 26px;
+      line-height: 46px;
+    }
+
+  .__person {
+    position: relative;
+    z-index: zIndex('over-bg-line');
+
+    margin-bottom: ($bu * 10);
+
+    &.is-last {
+      margin-bottom: 0;
+    }
+  }

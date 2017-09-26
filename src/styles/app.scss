@@ -1,5 +1,7 @@
 /** vendor */
 @import '~normalize.css/normalize';
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&subset=latin-ext');
+@import url('https://file.myfontastic.com/Sem3JmSnkC8AewUsUuWZT7/icons.css');
 
 /** util */
 @import './util/text';
@@ -9,3 +11,6 @@
 /** base */
 @import './base/page';
 @import './base/typography';
+
+/** components */
+@import './components/inline-list';

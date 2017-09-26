@@ -1,0 +1,21 @@
+<div class="__col">
+  <!-- image -->
+  <div
+    class="__background"
+    [defaultImage]="data?.defaultImage"
+    [lazyLoad]="data?.backgroundImage">
+  </div>
+</div><!--
+
+--><div class="__col">
+  <!-- content -->
+
+  <div class="__content">
+    <h2 class="__name">
+      {{ data?.name + ' ' + data?.surname }}
+    </h2>
+    <p class="__description" [innerHTML]=" data?.description"></p>
+
+    <a href="">{{ data?.name }} na linkedinu</a>
+  </div>
+</div>

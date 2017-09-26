@@ -1,0 +1,19 @@
+<ip-wrap>
+  <div class="u-position--relative">
+    <div class="__menu">
+      <div class="__menu_item">
+        Sledujte nás
+      </div>
+      <div class="__menu_item">
+        <span class="__menu_separator"></span>
+      </div>
+      <div class="__menu_item">
+        <ip-social-list
+          class="__social-list"
+          [data]="socialApi.list() | async">
+        </ip-social-list>
+      </div>
+    </div>
+    <ip-logo class="__logo"></ip-logo>
+  </div>
+</ip-wrap>

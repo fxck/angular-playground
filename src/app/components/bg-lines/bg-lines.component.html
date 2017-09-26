@@ -1,0 +1,9 @@
+<ip-wrap class="__outer-wrap">
+  <div class="__inner-wrap">
+    <div
+      class="__line"
+      [style.left]="i > 0 ? (25 * i) + '%' : 0"
+      *ngFor="let i of [0, 1, 2, 3, 4]">
+    </div>
+  </div>
+</ip-wrap>

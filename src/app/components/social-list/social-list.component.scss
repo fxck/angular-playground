@@ -1,0 +1,30 @@
+@import 'theme';
+
+$sociaListItemSize: 35px;
+
+:host {
+  display: inline-block;
+}
+
+  .__link {
+    width: $sociaListItemSize;
+    height: $sociaListItemSize;
+
+    color: inherit;
+
+    font-size: 17px;
+    line-height: $sociaListItemSize;
+    text-align: center;
+
+    transition: color 400ms;
+
+    &:hover {
+      color: map-get($colors, 'primary');
+    }
+  }
+
+  .__icon {
+    &:before {
+      vertical-align: middle;
+    }
+  }

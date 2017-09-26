@@ -1,15 +1,13 @@
 import { environment } from '../environments/environment';
 
-const DEV_PROVIDERS = [
+import { SocialApi } from './services/social-api.service';
+import { PeopleApi } from './services/people-api.service';
 
-];
-
-const PROD_PROVIDERS = [
-
-];
-
+const DEV_PROVIDERS = [];
+const PROD_PROVIDERS = [];
 const COMMON_PROVIDERS = [
-
+  SocialApi,
+  PeopleApi
 ];
 
 export const APP_PROVIDERS = !environment.production

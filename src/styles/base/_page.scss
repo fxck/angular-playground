@@ -1,14 +1,18 @@
 @import 'variables';
 @import 'theme';
+@import 'functions';
 
 html {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
 
-  background: map-get($backgrounds, 'main');
-  color: map-get($colors, 'primary');
+  background: background('main');
+  color: color('main');
   font-family: $font-main;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
 }
 
 body {
@@ -21,4 +25,20 @@ body {
   &:after {
     box-sizing: inherit;
   }
+}
+
+button {
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: 0;
+
+  font-family: $font-main;
+
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }

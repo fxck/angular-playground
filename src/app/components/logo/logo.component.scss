@@ -1,0 +1,16 @@
+$logoColorMain: #000;
+$logoColorInverted: #fff;
+
+:host {
+  display: inline-block;
+
+  &.is-inverted {
+    .__path {
+      fill: $logoColorInverted;
+    }
+  }
+}
+
+  .__path {
+    fill: $logoColorMain;
+  }

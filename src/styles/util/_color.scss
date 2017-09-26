@@ -1,4 +1,5 @@
 @import 'theme';
+@import 'functions';
 
 @each $color-name, $color-code in $colors {
   @if not map-has-key($colors, $color-name) {
@@ -7,7 +8,7 @@
 
   @else {
     .u-color--#{$color-name} {
-      color: $color-code;
+      color: color($color-name);
     }
   }
 }

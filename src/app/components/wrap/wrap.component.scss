@@ -1,0 +1,10 @@
+@import 'variables';
+
+$wrapBaseWidth: $max-width + ($bu * 2);
+
+:host {
+  display: block;
+  max-width: $wrapBaseWidth;
+  padding: 0 $bu;
+  margin: 0 auto;
+}
