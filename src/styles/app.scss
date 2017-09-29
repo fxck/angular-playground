@@ -1,7 +1,9 @@
 /** vendor */
 @import '~normalize.css/normalize';
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600&subset=latin-ext');
-@import url('https://file.myfontastic.com/Sem3JmSnkC8AewUsUuWZT7/icons.css');
+
+/** grid */
+@import '~frid/src/frid';
 
 /** util */
 @import './util/text';
@@ -12,5 +14,10 @@
 @import './base/page';
 @import './base/typography';
 
+/** fonts */
+@import './fonts/fontastic';
+
 /** components */
 @import './components/inline-list';
+@import './components/button-base';
+@import './components/wrap';

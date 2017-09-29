@@ -1,0 +1,16 @@
+<span class="__active-section">
+  {{ sectionsStore.getActive()?.key }}
+</span>
+
+<div class="__items">
+  <a
+    href=""
+    class="__link"
+    [class.is-active]="sectionsStore.getActive()?.key === item.key"
+    *ngFor="let item of sectionsStore.list(); let index = index; trackBy: _trackBy">
+    <span class="__link_text">0{{ index + 1 }}</span>
+
+    <span class="__line"></span>
+  </a>
+
+</div>

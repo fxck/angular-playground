@@ -17,7 +17,6 @@
     z-index: zIndex('over-bg-line');
 
     max-width: 790px;
-    margin-left: 25%;
     padding: ($bu * 10) 0;
   }
 
@@ -41,4 +40,10 @@
     &.is-last {
       margin-bottom: 0;
     }
+  }
+
+  .__services {
+    position: relative;
+    z-index: zIndex('over-bg-line');
+    padding: ($bu * 10) 0;
   }

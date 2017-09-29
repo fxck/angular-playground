@@ -6,7 +6,7 @@
 </div>
 
 <ip-wrap class="__wrap">
-  <div class="__content">
+  <div class="__content" [@animation]="visible">
 
     <ip-content-indenter
       contentOffset="90px"
@@ -28,18 +28,30 @@
       </ng-container>
 
       <!-- description -->
-      <div class="__description">
-        <ng-template [ngTemplateOutlet]="descriptionTpl"></ng-template>
-      </div>
+      <ip-reveal-animation [animationState]="visible">
+        <div class="__description">
+          <ng-template [ngTemplateOutlet]="descriptionTpl"></ng-template>
+        </div>
+      </ip-reveal-animation>
 
       <!-- call to action -->
-      <button
-        class="__cta"
-        ip-raised-button
-        *ngIf="ctaLabel"
-        (click)="ctaClick.emit($event)">
-        {{ ctaLabel }}
-      </button>
+      <ip-reveal-animation [animationState]="visible">
+        <button
+          class="__cta"
+          ip-raised-button
+          *ngIf="ctaLabel && !ctaLink"
+          (click)="ctaClick.emit($event)">
+          <ng-template>{{ ctaLabel }}</ng-template>
+        </button>
+        <a
+          class="__cta"
+          ip-raised-button
+          [href]="ctaLink"
+          *ngIf="ctaLabel && ctaLink"
+          (click)="ctaClick.emit($event)">
+          <ng-template>{{ ctaLabel }}</ng-template>
+        </a>
+      </ip-reveal-animation>
 
     </ip-content-indenter>
 

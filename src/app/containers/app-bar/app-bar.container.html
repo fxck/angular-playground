@@ -1,19 +1,34 @@
-<ip-wrap>
-  <div class="u-position--relative">
-    <div class="__menu">
-      <div class="__menu_item">
-        Sledujte nás
+<div [@animation]="visible">
+  <div class="c-wrap">
+    <div class="u-position--relative">
+      <div class="__menu">
+        <div class="__menu_item">
+          <ip-slide-in-animation [animationState]="visible">
+            Sledujte nás
+          </ip-slide-in-animation>
+        </div>
+        <div class="__menu_item">
+          <ip-slide-in-animation [animationState]="visible">
+            <span class="__menu_separator"></span>
+          </ip-slide-in-animation>
+        </div>
+        <div class="__menu_item">
+          <ip-slide-in-animation [animationState]="visible">
+            <ip-social-list
+              class="__social-list"
+              [data]="socialApi.list() | async">
+            </ip-social-list>
+          </ip-slide-in-animation>
+        </div>
       </div>
-      <div class="__menu_item">
-        <span class="__menu_separator"></span>
-      </div>
-      <div class="__menu_item">
-        <ip-social-list
-          class="__social-list"
-          [data]="socialApi.list() | async">
-        </ip-social-list>
-      </div>
+      <ip-fade-animation
+        class="__logo"
+        [animationState]="visible"
+        [animationParams]="{
+          duration: '1000ms 300ms'
+        }">
+        <ip-logo></ip-logo>
+      </ip-fade-animation>
     </div>
-    <ip-logo class="__logo"></ip-logo>
   </div>
-</ip-wrap>
+</div>

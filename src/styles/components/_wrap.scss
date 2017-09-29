@@ -1,0 +1,8 @@
+$wrapBaseWidth: $max-width + ($bu * 2);
+
+.c-wrap {
+  display: block;
+  max-width: $wrapBaseWidth;
+  padding: 0 $bu;
+  margin: 0 auto;
+}

@@ -1,21 +1,40 @@
-<div class="__col">
-  <!-- image -->
-  <div
-    class="__background"
-    [defaultImage]="data?.defaultImage"
-    [lazyLoad]="data?.backgroundImage">
+<div class="o-frid  o-frid--flush" [@animation]="visible">
+  <div class="o-frid__col  u-1/2">
+    <!-- image -->
+    <ip-fade-animation [animationState]="visible">
+      <div
+        class="__background"
+        [defaultImage]="data?.defaultImage"
+        [lazyLoad]="data?.backgroundImage">
+      </div>
+    </ip-fade-animation>
   </div>
-</div><!--
+  <div class="o-frid__col  u-1/2">
+    <!-- content -->
+    <div class="__content">
+      <ip-slide-in-animation [animationState]="visible">
+        <h2 class="__name">
+          {{ data?.name + ' ' + data?.surname }}
+        </h2>
+      </ip-slide-in-animation>
 
---><div class="__col">
-  <!-- content -->
+      <ip-reveal-animation [animationState]="visible">
+        <p
+          class="__description"
+          [innerHTML]=" data?.description">
+        </p>
+      </ip-reveal-animation>
 
-  <div class="__content">
-    <h2 class="__name">
-      {{ data?.name + ' ' + data?.surname }}
-    </h2>
-    <p class="__description" [innerHTML]=" data?.description"></p>
-
-    <a href="">{{ data?.name }} na linkedinu</a>
+      <ip-reveal-animation [animationState]="visible">
+        <a href="" ip-link-button class="__link">
+          <ng-template>{{ data?.name }} na linkedinu</ng-template>
+        </a>
+      </ip-reveal-animation>
+    </div>
   </div>
+
 </div>
+
+<!-- <button (click)="!!toggle()">
+  Toggle
+</button> -->

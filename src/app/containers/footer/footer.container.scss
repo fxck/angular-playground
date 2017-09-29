@@ -1,0 +1,49 @@
+@import 'theme';
+@import 'variables';
+@import 'functions';
+
+:host {
+  position: relative;
+  z-index: zIndex('over-bg-line');
+
+  display: block;
+  padding: $bu * 5;
+
+  background: background('footer');
+  color: color('main-inverted');
+}
+
+  .__title {
+    color: inherit;
+    margin-bottom: $bu * 3;
+  }
+
+  .__contact_name {
+    color: inherit;
+    margin-bottom: $bu;
+  }
+
+  .__contact_contacts,
+  .__contact_mail {
+    color: color('main');
+  }
+
+  .__contact_mail {
+    text-decoration: none;
+
+    transition: color 200ms;
+
+    &:hover {
+      color: color('main-inverted');
+    }
+  }
+
+  .__logo-wrap {
+    height: 100%;
+  }
+
+  .__logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }

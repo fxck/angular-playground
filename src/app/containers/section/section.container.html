@@ -1,0 +1,9 @@
+<div
+  #inViewRef
+  [ipInView]="key"
+  [inViewOffsetTop]="activeOffsetTop"
+  [inViewOffsetBottom]="activeOffsetBottom"
+  (enteredView)="setActive()"
+  (leftView)="setInactive()">
+  <ng-content></ng-content>
+</div>

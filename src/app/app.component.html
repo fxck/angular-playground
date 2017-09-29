@@ -1,50 +1,108 @@
-<ip-app-bar class="__app-bar"></ip-app-bar>
+<ip-app-bar [visible]="pageLoaded" class="__app-bar"></ip-app-bar>
 
 <ip-bg-lines></ip-bg-lines>
 
-<ip-cover-section
-  backgroundImage="../static/hp-cover_bg.jpg"
-  defaultImage="../static/hp-cover_bg--preload.jpg"
-  ctaLabel="Zjistěte víc">
+<ip-menu></ip-menu>
 
-  <ng-container *ipCoverSectionHeading>
-    Vaše značka<br/>
-    s námi bude<br/>
-    lépe vidět
-  </ng-container>
+<ip-section key="Intro">
+  <ip-cover-section
+    [visible]="pageLoaded"
+    backgroundImage="../static/hp-cover_bg.jpg"
+    defaultImage="../static/hp-cover_bg--preload.jpg"
+    ctaLabel="Zjistěte víc">
 
-  <ng-container *ipCoverSectionDescription>
-    Jsme PR agentura složená z odborníků,<br/>
-    kteří mají roky zkušeností z médií, agentur<br/>
-    i oddělení korporátní komunikace.
-  </ng-container>
+    <ng-container *ipCoverSectionHeading>
+      <ip-slide-in-animation [animationState]="pageLoaded">
+        Vaše značka
+      </ip-slide-in-animation>
+      <ip-slide-in-animation [animationState]="pageLoaded">
+        s námi bude
+      </ip-slide-in-animation>
+      <ip-slide-in-animation [animationState]="pageLoaded">
+        lépe vidět
+      </ip-slide-in-animation>
+    </ng-container>
 
-</ip-cover-section>
+    <ng-container *ipCoverSectionDescription>
+      Jsme PR agentura složená z odborníků,<br/>
+      kteří mají roky zkušeností z médií, agentur<br/>
+      i oddělení korporátní komunikace.
+    </ng-container>
+
+  </ip-cover-section>
+</ip-section>
 
 <ip-wrap>
-  <div class="__intro">
-    <ip-content-indenter
-      class="__intro_indenter"
-      indenterWidth="30px"
-      indenterHeight="2px"
-      indenterOffset="20px"
-      contentOffset="46px">
-      <p class="__intro_text">
-        Vytváříme komunikační strategie, vyhledáváme
-        a&nbsp;zpracováváme vhodná témata a komunikujeme s médii
-        i&nbsp;klienty. Máme cenné zkušenosti z mnoha komunikačně
-        složitých situací, včetně krizové komunikace, a nestraníme
-        se&nbsp;žádné, ani té nejjednodušší práce, co s PR souvisí.
-      </p>
-    </ip-content-indenter>
-  </div>
+  <ip-section key="O nás">
+    <div class="o-frid  o-frid--flush  o-frid--justify-end">
+      <div class="o-frid__col u-3/4">
+        <div
+          class="__intro"
+          ipInView="introText"
+          inViewOffsetTop="-70vh"
+          (enteredView)="introVisible = true"
+          (leftView)="introVisible = false">
+          <ip-reveal-animation
+            [animationState]="introVisible"
+            [animationParams]="{
+              translateIn: '20px',
+              translateOut: '20px',
+              durationIn: '700ms',
+              durationOut: '300ms'
+            }">
+            <ip-content-indenter
+              class="__intro_indenter"
+              indenterWidth="30px"
+              indenterHeight="2px"
+              indenterOffset="20px"
+              contentOffset="46px">
+              <p class="__intro_text">
+                Vytváříme komunikační strategie, vyhledáváme
+                a&nbsp;zpracováváme vhodná témata a komunikujeme s médii
+                i&nbsp;klienty. Máme cenné zkušenosti z mnoha komunikačně
+                složitých situací, včetně krizové komunikace, a nestraníme
+                se&nbsp;žádné, ani té nejjednodušší práce, co s PR souvisí.
+              </p>
+            </ip-content-indenter>
+          </ip-reveal-animation>
+        </div>
+      </div>
+    </div>
 
-  <ip-person
-    class="__person"
-    [class.is-last]="last"
-    [data]="item"
-    [inverted]="odd"
-    *ngFor="let item of peopleApi.list() | async; let odd = odd; let last = last; trackBy: _trackBy">
-  </ip-person>
+    <ip-person
+      #personRef
+      class="__person"
+      [ipInView]="item?.name"
+      inViewOffsetTop="-50vh"
+      [inViewOffsetBottom]="100"
+      (enteredView)="personRef.show();"
+      (leftView)="personRef.hide();"
+      [class.is-last]="last"
+      [data]="item"
+      [inverted]="odd"
+      *ngFor="let item of peopleApi.list() | async; let odd = odd; let last = last; trackBy: _trackBy">
+    </ip-person>
+  </ip-section>
+
+  <ip-section
+    #serviceSectionRef
+    key="Služby"
+    class="__services">
+
+    <div class="o-frid  o-frid--flush  o-frid--justify-end">
+      <div class="o-frid__col  u-3/4">
+        <h2>Co pro vás můžeme udělat?</h2>
+      </div>
+    </div>
+    <ip-services
+      (itemsLoaded)="serviceSectionRef.refreshInView(true)"
+      [visible]="serviceSectionRef.isActive()">
+    </ip-services>
+
+  </ip-section>
 
 </ip-wrap>
+
+<ip-section key="Kontakt">
+  <ip-footer></ip-footer>
+</ip-section>

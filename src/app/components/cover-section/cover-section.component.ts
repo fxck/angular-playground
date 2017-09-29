@@ -8,6 +8,17 @@ import {
   TemplateRef,
   ChangeDetectionStrategy
 } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  query,
+  animateChild,
+  stagger,
+  group
+} from '@angular/animations';
 
 type AllowedLevels = 1 | 2 | 3;
 
@@ -33,6 +44,22 @@ export class CoverSectionDescriptionDirective { }
   selector: 'ip-cover-section',
   templateUrl: './cover-section.component.html',
   styleUrls: ['./cover-section.component.scss'],
+  animations: [
+    trigger('animation', [
+      state('0', style({})),
+      state('1', style({})),
+      transition('0 => 1', [
+        query('@slideInAnimation, @revealAnimation', [
+          stagger(100, animateChild())
+        ], { optional: true })
+      ]),
+      transition('1 => 0', [
+        query('@slideInAnimation, @revealAnimation', [
+          stagger(-100, animateChild())
+        ], { optional: true })
+      ])
+    ])
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CoverSectionComponent {
@@ -49,6 +76,9 @@ export class CoverSectionComponent {
   ctaLabel: string;
 
   @Input()
+  ctaLink: string;
+
+  @Input()
   backgroundColor: string;
 
   @Input()
@@ -57,6 +87,21 @@ export class CoverSectionComponent {
   @Input()
   defaultImage: string;
 
+  @Input()
+  visible = false;
+
   @Output()
   ctaClick = new EventEmitter<MouseEvent>(false);
+
+  toggle() {
+    this.visible = !this.visible;
+  }
+
+  show() {
+    this.visible = true;
+  }
+
+  hide() {
+    this.visible = false;
+  }
 }

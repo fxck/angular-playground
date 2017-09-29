@@ -1,0 +1,29 @@
+@import 'theme';
+@import 'functions';
+
+:host {
+  display: inline-block;
+}
+
+  .__icon {
+    height: 80px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+
+    color: color('primary');
+
+    font-size: 80px;
+
+    &:before {
+      vertical-align: middle;
+    }
+  }
+
+  .__title {
+    margin-top: $bu / 2;
+  }
+
+  .__text {
+    margin-top: $bu / 1.5;
+  }

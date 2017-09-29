@@ -16,6 +16,9 @@ $appBarTopOffset: $bu * 2;
     position: absolute;
     top: 0;
     right: 0;
+
+    width: 80px;
+    height: 86px;
   }
 
   .__menu {
@@ -45,4 +48,10 @@ $appBarTopOffset: $bu * 2;
 
   .__social-list {
     vertical-align: middle;
+  }
+
+
+
+  .bitch {
+    display: inline-block;
   }

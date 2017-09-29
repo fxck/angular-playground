@@ -10,10 +10,8 @@ $personContentMaxWidth: 410px;
   }
 }
 
-  .__col {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
+  .__name-wrap {
+    overflow: hidden;
   }
 
   .__background {
@@ -30,9 +28,9 @@ $personContentMaxWidth: 410px;
   }
 
   .__content {
-    max-width: $personContentMaxWidth + ($bu * 2);
+    max-width: $personContentMaxWidth + ($bu * 6);
     margin: 0 auto;
-    padding: $bu;
+    padding: $bu ($bu *3);
     padding-top: $bu * 5;
 
     direction: ltr;

@@ -1,0 +1,25 @@
+<ip-wrap>
+  <div class="o-frid  o-frid--flush">
+    <div class="o-frid__col  u-1/4">
+      <div class="__logo-wrap  u-position--relative">
+        <ip-logo class="__logo" inverted></ip-logo>
+      </div>
+    </div>
+    <div class="o-frid__col  u-3/4">
+      <h2 class="__title">Jak se s námi spojit</h2>
+
+      <div class="o-frid  o-frid--flush">
+        <div class="o-frid__col  u-1/3" *ngFor="let item of peopleApi.list() | async">
+          <div class="__contact">
+            <h4 class="__contact_name">{{ item?.name + ' ' + item?.surname }}</h4>
+            <p class="__contact_contacts">
+              <a class="__contact_mail" [href]="'mailto:' + item?.mail">{{ item?.mail }}</a> <br/>
+              {{ item?.phone }}
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</ip-wrap>
